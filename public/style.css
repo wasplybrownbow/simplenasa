@@ -1,0 +1,51 @@
+/* TAG */
+html {
+	background-color: #d4eaea;
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  margin: 0px;
+  padding: 0px;
+}
+img {
+	width:  100%;
+}
+
+/* CLASS */
+.explanation {
+  padding: 6px;
+  border-radius: 2px;
+  position: fixed;
+  top: 50px;
+  left: 5%;
+  width: 90%;
+  font-family: sans-serif;
+  font-size: 1em;
+  opacity: .5;
+  letter-spacing: 0em;
+  line-height: 1.2em;
+  color: #171717;
+  text-shadow: 1px 1px #a82d66;   
+  background-color: #eaeaea;
+  -webkit-transition: opacity 1s; /* Safari */
+  -moz-transition: opacity    1s;
+  -o-transition: opacity      1s;
+}
+
+.container {
+  border: none;
+  padding: 0px;
+  margin: 0px;
+  opacity:  0;
+  width: 100%;
+  -webkit-transition: width 4s, height 4s; 
+  -moz-transition:    width 4s, height 4s;
+  -o-transition:      width 4s, height 4s; 
+  
+  -webkit-transition: opacity 4s; /* Safari */
+  -moz-transition:    opacity 4s;
+  -o-transition:      opacity 4s;
+}
+
+/* ID */
