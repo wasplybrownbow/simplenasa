@@ -1,10 +1,24 @@
 document.getElementById("explanation").addEventListener("mouseover", showExplanation);
 document.getElementById("explanation").addEventListener("mouseout", hideExplanation);
 
-alert('app.js');
+document.getElementById("menu").addEventListener("mouseover", showMenu);
+document.getElementById("menu").addEventListener("mouseout", hideMenu);
+
+var intervalMS = 50000;
+var newMS;
+var oldMS;
+
+document.getElementById("60").addEventListener("click", function() {
+  console.log("you clicked 60");
+  intervalMS = 60000;
+  setInterval(function(){ changeURL() }, 60000);}
+);  
+
 
 var exp = document.getElementById("explanation");
 var img = document.getElementById("imgcontainer");
+var men = document.getElementById("menu");
+
 
 // GET the thingy
 var xmlhttp = new XMLHttpRequest();
@@ -12,12 +26,16 @@ var url = "https://api.nasa.gov/planetary/apod?api_key=yI8IPZwsLPL9RRAnV67PEixBx
 xmlhttp.open("GET", url, true);  // open just specifies and defines the request
 xmlhttp.send();  								 // send actually sends the request that I opened. (use with GET) 
 
+setInterval(function(){ changeURL() }, 10000);
+
 // Setup 
 function initialize() {
   url = "https://api.nasa.gov/planetary/apod?api_key=yI8IPZwsLPL9RRAnV67PEixBxc1izfhrs1bnr92V&hd=False&date=";
   url += handlerFunc();
   //alert(url);
-  console.log(url);
+  newMS = Date.now()/1000;
+  oldMS = Date.now()/1000;
+  console.log('Initialize ' + newMS);
   xmlhttp.open("GET", url, true);  
   xmlhttp.send(); 
   
@@ -25,12 +43,19 @@ function initialize() {
   img.style.width = '100%';
   //img.style.height = '100%';
   img.style.opacity = 1;
-  setInterval(function(){ changeURL() }, 43000);
   
 }
 
 // Run this forevor 
 //setInterval(changeURL(), 5000);
+
+function showMenu() {
+	men.style.opacity = '.5';
+}
+
+function hideMenu() {
+  	men.style.opacity = '0';
+}
 
 function opacto1() {
   //alert("waiting in opacto1");
@@ -47,10 +72,12 @@ function changeURL() {
   url = "https://api.nasa.gov/planetary/apod?api_key=yI8IPZwsLPL9RRAnV67PEixBxc1izfhrs1bnr92V&hd=False&date=";
   url += handlerFunc();
   //alert(url);
-  console.log(url);
+  newMS = Date.now()/1000;    
+  console.log(newMS-oldMS);
   xmlhttp.open("GET", url, true);  
   xmlhttp.send();
   opacto1();
+  oldMS = newMS;
 }
 
 xmlhttp.onreadystatechange = function() {

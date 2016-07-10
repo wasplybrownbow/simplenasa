@@ -13,6 +13,41 @@ img {
 }
 
 /* CLASS */
+.menu {
+  position: fixed;
+  -webkit-transition: opacity 1s; /* Safari */
+  -moz-transition: opacity    1s;
+  -o-transition: opacity      1s;
+}
+ul {
+    list-style-type: none;
+    margin: -1px;
+    padding: 0;
+    border-width: 0px;
+    overflow: hidden;
+}
+li {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+  
+  font-family: sans-serif;
+  font-size: 1em;
+  opacity: .5;
+  letter-spacing: 0em;
+  line-height: 1.2em;
+  color: #171717;
+  text-shadow: 1px 1px #a82d66;   
+  background-color: #eaeaea;
+}
+li:hover {
+    background-color: #d4bfe3;
+}
+
+
 .explanation {
   padding: 6px;
   border-radius: 2px;
