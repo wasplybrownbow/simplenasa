@@ -8,11 +8,11 @@ var intervalMS = 50000;
 var newMS;
 var oldMS;
 
-document.getElementById("60").addEventListener("click", function() {
-  console.log("you clicked 60");
-  intervalMS = 60000;
-  setInterval(function(){ changeURL() }, 60000);}
-);  
+//document.getElementById("60").addEventListener("click", function() {
+//  console.log("you clicked 60");
+//  intervalMS = 60000;
+//  setInterval(function(){ changeURL() }, 60000);}
+//);  
 
 
 var exp = document.getElementById("explanation");
@@ -26,7 +26,7 @@ var url = "https://api.nasa.gov/planetary/apod?api_key=yI8IPZwsLPL9RRAnV67PEixBx
 xmlhttp.open("GET", url, true);  // open just specifies and defines the request
 xmlhttp.send();  								 // send actually sends the request that I opened. (use with GET) 
 
-setInterval(function(){ changeURL() }, 10000);
+setInterval(function(){ changeURL() }, 50000);
 
 // Setup 
 function initialize() {
